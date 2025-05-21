@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>JPA Club: Web App 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Inline styles for visual aids -->
+  <style>
+    .diagram, .screenshot { max-width: 100%; margin: 1em 0; border: 1px solid #ddd; border-radius: 4px; }
+    .link-list a { display: block; margin: 0.3em 0; }
+    pre { background: #f4f4f4; padding: 1em; overflow-x: auto; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>JPA Club: Building Your First Web App</h1>
+    <nav id="main-nav">
+      <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul>
+        <li><a href="#analogy">House Analogy</a></li>
+        <li><a href="#roles">Team Roles</a></li>
+        <li><a href="#basics">HTML/CSS/JS</a></li>
+        <li><a href="#tools">GitHub &amp; VS Code</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="analogy">
+      <h2>1. Web Dev Basics: Building a House 🏠</h2>
+      <img src="house.jpg" alt="House vs Web App Analogy" class="diagram">
+      <p>Let’s break down each phase:</p>
+      <ol>
+        <li>
+          <strong>Blueprint (Planning):</strong>
+          <ul>
+            <li>Site map: list of pages and features.</li>
+            <li>Wireframes: rough sketches of layouts.</li>
+            <li>User stories: what your audience needs.</li>
+          </ul>
+          <a href="https://www.figma.com/" target="_blank">• Tool: Figma (wireframes & prototypes)</a>
+        </li>
+        <li>
+          <strong>Foundation (HTML):</strong>
+          <ul>
+            <li>Build the skeleton: headings, paragraphs, lists.</li>
+            <li>Define sections with <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+          </ul>
+          <a href="https://www.w3schools.com/html/" target="_blank">• Tutorial: W3Schools HTML</a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">• Reference: MDN HTML</a>
+        </li>
+        <li>
+          <strong>Frame (Layout):</strong>
+          <ul>
+            <li>Use containers (<code>&lt;div&gt;</code> or semantic tags) to divide space.</li>
+            <li>CSS Flexbox/Grid = framing walls and rooms.</li>
+          </ul>
+          <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">• Guide: CSS-Tricks Flexbox</a>
+          <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">• Guide: CSS-Tricks Grid</a>
+        </li>
+        <li>
+          <strong>Insulation &amp; Finishes (CSS):</strong>
+          <ul>
+            <li>Colors, backgrounds, fonts = paint & decor.</li>
+            <li>Margins, padding, borders = trim and molding.</li>
+          </ul>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">• Reference: MDN CSS</a>
+          <a href="https://www.w3schools.com/css/" target="_blank">• Tutorial: W3Schools CSS</a>
+        </li>
+        <li>
+          <strong>Electrical (JavaScript):</strong>
+          <ul>
+            <li>Interactive wiring: buttons, forms, dynamic content.</li>
+            <li>Event handling = light switches turning on/off.</li>
+          </ul>
+          <a href="https://javascript.info/" target="_blank">• Tutorial: JavaScript.info</a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">• Reference: MDN JavaScript</a>
+        </li>
+        <li>
+          <strong>Plumbing (Data &amp; APIs):</strong>
+          <ul>
+            <li>Database connections: water supply.</li>
+            <li>Fetch & send data to Firestore or REST APIs.</li>
+          </ul>
+          <a href="https://firebase.google.com/docs/firestore" target="_blank">• Docs: Firebase Firestore</a>
+          <a href="https://restfulapi.net/" target="_blank">• Guide: RESTful API Principles</a>
+        </li>
+        <li>
+          <strong>Inspection &amp; Security (Testing &amp; Deployment):</strong>
+          <ul>
+            <li>Check for bugs: home inspection.</li>
+            <li>Deploy on GitHub Pages, Netlify, or Vercel = opening the door to visitors.</li>
+          </ul>
+          <a href="https://pages.github.com/" target="_blank">• Host: GitHub Pages</a>
+          <a href="https://www.netlify.com/" target="_blank">• Host: Netlify</a>
+          <a href="https://vercel.com/" target="_blank">• Host: Vercel</a>
+        </li>
+      </ol>
+    </section>
+
+    <section id="roles">
+      <h2>2. Team Roles &amp; Responsibilities</h2>
+
+      <h3>👩‍🎨 Design Team</h3>
+      <ul>
+        <li>Wireframes &amp; mockups → <a href="https://www.figma.com/" target="_blank">Figma</a></li>
+        <li>User research &amp; personas → <a href="https://xtensio.com/user-persona/" target="_blank">Xtensio Persona Tool</a></li>
+        <li>Feature workflows &amp; storyboards → <a href="https://miro.com/" target="_blank">Miro</a></li>
+        <li>Branding: colors, fonts, animations</li>
+      </ul>
+      <img src="wireframe example.avif" alt="Wireframe example" class="screenshot" width="300">
+
+      <h3>🧐 Usability Experts</h3>
+      <ul>
+        <li>Plan &amp; conduct usability tests → <a href="https://www.usability.gov/how-to-and-tools/methods/usability-testing.html" target="_blank">Usability.gov</a></li>
+        <li>Record &amp; analyze sessions → <a href="https://lookback.io/" target="_blank">Lookback</a></li>
+      </ul>
+
+      <h3>📚 Content &amp; Marketing</h3>
+      <strong>Content Manager:</strong>
+      <ul>
+        <li>Quiz topics &amp; sources</li>
+        <li>Question formats &amp; validation</li>
+        <li>Organize Q&amp;A in JSON → <a href="https://json.org/" target="_blank">JSON.org</a></li>
+      </ul>
+      <strong>Marketing:</strong>
+      <ul>
+        <li>Audience &amp; USP → <a href="https://mailchimp.com/" target="_blank">Mailchimp</a></li>
+        <li>4 Ps: Product, Place, Promotion, Price</li>
+      </ul>
+
+      <h3>💻 Software Team</h3>
+      <strong>Front-end:</strong>
+      <ul>
+        <li>Modular UI → <a href="https://reactjs.org/docs/components-and-props.html" target="_blank">React Components</a></li>
+        <li>Flexbox &amp; Grid → <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS-Tricks</a></li>
+      </ul>
+      <strong>Back-end:</strong>
+      <ul>
+        <li>Node.js &amp; Firestore → <a href="https://nodejs.org/" target="_blank">Node.js</a>, <a href="https://firebase.google.com/docs/firestore" target="_blank">Firestore</a></li>
+        <li>API design &amp; security → <a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top Ten</a></li>
+      </ul>
+
+      <h3>📋 Project Managers</h3>
+      <ul>
+        <li>Task boards → <a href="https://trello.com/" target="_blank">Trello</a>, <a href="https://www.atlassian.com/software/jira" target="_blank">Jira</a></li>
+        <li>Communication → <a href="https://slack.com/" target="_blank">Slack</a>, <a href="https://zoom.us/" target="_blank">Zoom</a></li>
+      </ul>
+    </section>
+
+    <section id="basics">
+      <h2>3. HTML, CSS &amp; JavaScript Fundamentals</h2>
+
+      <h3>HTML</h3>
+      <p>Basic tags &amp; structure:</p>
+      <ul>
+        <li><strong>Headings:</strong> <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> → <a href="https://www.w3schools.com/tags/tag_hn.asp" target="_blank">W3Schools Headings</a></li>
+        <li><strong>Paragraphs:</strong> <code>&lt;p&gt;</code> → <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p" target="_blank">MDN &lt;p&gt;</a></li>
+        <li><strong>Links:</strong> <code>&lt;a href="url"&gt;</code> → <a href="https://www.w3schools.com/tags/tag_a.asp" target="_blank">W3Schools Links</a></li>
+        <li><strong>Images:</strong> <code>&lt;img&gt;</code> → <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" target="_blank">MDN &lt;img&gt;</a></li>
+        <li><strong>Lists:</strong> <code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code> → <a href="https://www.w3schools.com/tags/tag_ul.asp" target="_blank">W3Schools Lists</a></li>
+        <li><strong>Tables:</strong> <code>&lt;table&gt;</code> → <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" target="_blank">MDN Tables</a></li>
+      </ul>
+      <pre><code>&lt;h2&gt;My Heading&lt;/h2&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;a href="https://jpa.org.kh" target="_blank"&gt;Visit JPA&lt;/a&gt;
+&lt;img src="logo.png" alt="JPA Logo"/&gt;</code></pre>
+
+      <h3>CSS</h3>
+      <p>Selectors &amp; box model:</p>
+      <ul>
+        <li><strong>Element:</strong> <code>p { color: #333; }</code> → <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors" target="_blank">MDN Selectors</a></li>
+        <li><strong>Class:</strong> <code>.btn { padding: 0.5em; }</code> → <a href="https://www.w3schools.com/css/css_class.asp" target="_blank">W3Schools Classes</a></li>
+        <li><strong>ID:</strong> <code>#main { max-width: 800px; }</code> → <a href="https://www.w3schools.com/css/css_id.asp" target="_blank">W3Schools IDs</a></li>
+        <li><strong>Box model:</strong> margin, border, padding, content → <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model" target="_blank">MDN Box Model</a></li>
+      </ul>
+      <pre><code>.btn {
+  background-color: #3498db;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+}
+
+.container {
+  display: flex;
+  gap: 1em;
+}</code></pre>
+
+      <h3>JavaScript</h3>
+      <p>DOM &amp; events:</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById" target="_blank">MDN getElementById</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank">MDN addEventListener</a></li>
+      </ul>
+      <pre><code>document.getElementById('myBtn').addEventListener('click', () =&gt; {
+  alert('Hello, student!');
+});</code></pre>
+
+      <div class="link-list">
+        <a href="https://javascript.info/" target="_blank">• JavaScript.info</a>
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" target="_blank">• freeCodeCamp JS</a>
+      </div>
+    </section>
+
+    <section id="tools">
+      <h2>4. GitHub &amp; VS Code Primer</h2>
+
+      <h3>GitHub</h3>
+      <ol>
+        <li>Sign up at <a href="https://github.com/" target="_blank">github.com</a>.</li>
+        <li>Install Git: <a href="https://git-scm.com/downloads" target="_blank">git-scm.com</a>.</li>
+        <li>Install GitHub Desktop: <a href="https://desktop.github.com/" target="_blank">desktop.github.com</a> →
+            <ul>
+              <li>Download and install the app.</li>
+              <li>Sign in with your GitHub account.</li>
+              <li>Use the GUI to clone, commit, and push.</li>
+            </ul>
+            <a href="https://www.youtube.com/watch?v=UsvK0rI2ytA" target="_blank">• YouTube: Getting Started with GitHub Desktop</a>
+          </li>
+        <li>Clone repo:
+          <pre><code>git clone &lt;url&gt;</code></pre>
+        </li>
+        
+        <li>Stage &amp; commit:
+          <pre><code>git add .
+git commit -m "Initial commit"</code></pre>
+        </li>
+        <li>Push &amp; pull:
+          <pre><code>git push
+git pull</code></pre>
+        </li>
+      </ol>
+      <a href="https://www.youtube.com/watch?v=HkdAHXoRtos" target="_blank">• YouTube: Git &amp; GitHub for Beginners</a>
+      <!-- <img src="https://via.placeholder.com/600x200?text=GitHub+Clone+Screenshot" alt="Git clone in terminal" class="screenshot"> -->
+
+      <h3>VS Code</h3>
+      <ol>
+        <li>Download: <a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a>.</li>
+        <li>Open project folder (File &rarr; Open Folder).</li>
+        <li>Built-in terminal (View &rarr; Terminal) uses CMD on Windows.</li>
+        <li>Install extensions:
+          <ul>
+            <li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live Server</a></li>
+            <li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank">Prettier</a></li>
+          </ul>
+        </li>
+        <li>Use Source Control pane for commits &amp; pushes.</li>
+      </ol>
+      <a href="https://www.youtube.com/watch?v=WPqXP_kLzpo" target="_blank">• VS Code Tutorial for Beginners</a>
+      <!-- <img src="https://via.placeholder.com/600x200?text=VS+Code+Screenshot" alt="VS Code interface" class="screenshot"> -->
+
+      <p>Now you have all the tools and resources to code, test, and deploy your first web app. Happy building!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© JPA Club Resources</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
